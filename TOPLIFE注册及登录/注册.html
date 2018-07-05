@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>注册页 - 京东旗下中国首家奢侈品旗舰店购物平台</title>
+		<script src="js/jquery-1.12.4.js"></script>
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			#Top{
+				width: 1905px;
+				height: 105px;
+				background-color: rgb(35,35,33);
+			}
+			#Top a{
+				font-size: 12px;
+				text-decoration: none;
+				position: relative;
+			}
+			#Sign{
+				color: rgb(255,255,255);
+				top:-15px;
+				left: 390px;
+			}
+			#Register{
+				color: rgb(255,255,255);
+				top:-15px;
+				left: 390px;
+			}
+			#Xie{
+				background-color: rgb(35,35,33);
+				top:-5px;
+				left: 390px;
+			}
+			#face{
+				position: relative;
+				left: 285px;
+				top:-5px;
+			}
+			#Logo{
+				position: relative;
+				left: 515px;
+				top:35px;
+			}
+			#Central{
+				position: relative;
+				left: 350px;
+				width:1212px;
+				height:700px;
+				top: -1px;
+			}
+			#Technological{
+				position: relative;
+				left: 340px;
+			}
+			#Addresss{
+				background-color: rgb(255,255,255);
+				width: 110px;
+				height: 55px;
+				position: relative;
+				left: 400px;
+				top:10px;
+				border:1.5px solid rgb(221,221,221);
+			}
+			#AddressPhone{
+				position: relative;
+				left: 411px;
+				top:-35px;
+				font-size: 15px;
+			}
+			#Lower{
+				position: relative;
+				left: 412px;
+				top:-28px;
+				font-size: 15px;
+			}
+			#Phone{
+				background-color: rgb(255,255,255);
+				width: 260px;
+				height: 55px;
+				position: relative;
+				left: 513px;
+				top:-73px;
+			}
+			#Phone input{
+				position: relative;
+				border:1.5px solid rgb(221,221,221);
+				width: 285px;
+				height: 53px;
+				font-size: 16px;
+				text-indent: 15px;
+			}
+			#Prompt span{
+				font-size: 12px;
+				color: rgb(207,208,219);
+				position: relative;
+				top:-5px;
+				right: 5px;
+			}
+			#Prompt{
+				position: relative;
+				left: 401px;
+				top:-65px;
+			}
+			.form-item-getcode{
+				line-height: 52px;
+    			text-align: center;
+    			font-size: 14px;
+    			color: #333;
+    			cursor: pointer;
+    			z-index: 2;
+    			position: absolute;
+    			left:400px;
+    			top:-50px;
+			}
+			.form-item{
+				position: relative;
+  				border: solid 1px #ddd;
+    			width: 398px;
+    			height: 52px;
+			}
+			#CB {
+                margin: 20px auto;
+                position: relative;
+                right: 190px;
+                z-index: 5;
+            }
+            #CB span {
+                position: relative;
+            }
+             
+            #CB .input_check {
+                position: absolute;
+                visibility: hidden;
+            }
+			#CB .input_check+label {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                border: 1px solid #DDDDDD;
+            }
+            #CB .input_check:checked+label:after {
+                content: "";
+                position: absolute;
+                left: 2px;
+                bottom: 12px;
+                width: 9px;
+                height: 4px;
+                border: 2px solid rgb(51,187,68);
+                border-top-color: transparent;
+                border-right-color: transparent;
+                -ms-transform: rotate(-60deg);
+                -moz-transform: rotate(-60deg);
+                -webkit-transform: rotate(-60deg);
+                transform: rotate(-45deg);
+            }
+            .Criterion{
+            	font-size: 11px;
+            }
+            .Criterion p{
+            	position: relative;
+            	top:-76px;
+            	right: 130px;
+            }
+            .Criterion a{
+            	position: relative;
+            	top:-128px;
+            	left: 18px;
+            	text-decoration: none;
+            	color: #06c;
+            }
+            .Criterion a:hover{
+            	color: rgb(200,22,35);
+            	text-decoration: underline;
+            }
+            .Buttom{
+            	width: 400px;
+            	height: 55px;
+            	background-color: black;
+            	position: relative;
+            	top: 30px;
+            	left: 400px;
+            	text-align: center;
+            	line-height: 50px;
+            }
+            .Buttom a{
+            	color: white;
+            	text-decoration: none;
+            }
+            
+		</style>
+	</head>
+	<body>
+		<div id="Top">
+			<a href="" id="Sign">登录</a>
+			<a id="Xie">/</a>
+			<a href="注册.html" id="Register">注册</a>
+			<span id="face"><img src="img/faceBlack.png"</span>
+			<a href="" id="Logo"><img src="img/Logo.png"></a>
+		</div>
+		<div id="Central">
+			<span id="Technological"><img src="img/Technological.png"></span>
+			<div id="Addresss">
+			</div>
+			<span id="AddressPhone">中国  0086</span>
+			<a id="Lower"><img src="img/Lower.png"></a>
+			<div id="Phone">
+				<input id="dgt" type="text" placeholder="建议使用常用手机号"/>
+			</div>
+			<div id="Prompt" style="width: 300px;">
+				<img src="img/Sign.png" /><span>&nbsp;&nbsp;验证完成后， 你可以使用该手机登录或找回密码</span>
+			</div>
+			<div class="form-item form-item-getcode" clstag="pageclick|keycount|reg_puser_201804031|7">点击按钮进行验证
+			<div id="CB">
+            <span><input type="checkbox"class="input_check" id="check3"><label for="check3"></label></span>
+       		</div>
+       		<div class="Criterion">
+       			<p>我已阅读并同意</p>
+       			<a href="https://www.toplife.com/list/about#reg">《toplife用户注册协议》</a>
+       			<a href="https://www.toplife.com/list/about#private"> 《隐私政策》 </a>
+       		</div>
+			</div>
+			<div class="Buttom">
+				<a href="#">下一步</a>
+			</div>
+	</body>
+		<script>
+			$(function  () {
+				$("#Prompt").hide();
+				$("#dgt").focus(function  () {
+					$("#Prompt").show();
+					$(this).toggleClass("border","1px solid rgb(102,102,102)");
+				}).blur(function(){
+					$("#Prompt").hide();
+				});
+				$("#CB input").click(function(){
+					$("#CB input").css("background-color","red");
+				});
+			});
+		</script>
+</html>
