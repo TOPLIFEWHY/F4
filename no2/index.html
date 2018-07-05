@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/magnifier.css">
+		<title>放大镜效果</title>
+		<style type="text/css">
+			body {
+				background-color: rgb(246, 246, 246)
+			}
+			
+			#detail-intro {
+				position: absolute;
+				left: 357px;
+				top: 220px;
+				width: 760px;
+				height: 1868px;
+				/*border: 1px solid red;*/
+				background-color: white;
+			}
+			
+			#magnifier1 {
+				position: relative;
+				top: -75px;
+				left: -55px;
+				width: 610px;
+				height: 610px;
+			}
+			
+			.magnifier-container {
+				width: 610px;
+				height: 706px;
+			}
+			
+			#top {
+				height: 105px;
+				background-color: #232321;
+				border: 1px solid blue;
+			}
+			
+			.top-nav {
+				height: 60px;
+				border: 1px solid yellow;
+			}
+			
+			.images-cover {
+				width: 610px;
+				height: 706px;
+				line-height: 706px;
+				border: none;
+			}
+			
+			.images-cover img {
+				margin: 0 auto;
+			}
+			
+			.tab-head {
+				position: relative;
+				left: 45px;
+				width: 610px;
+				height: 40px;
+				top: 44px;
+			}
+			
+			.tab-head-item {
+				width: 50%;
+				display: inline-block;
+				line-height: 40px;
+				text-align: center;
+				background-color: #bebebe;
+				color: #fff;
+				font-size: 14px;
+				cursor: pointer;
+				float: left;
+			}
+			
+			.tab-body {
+				position: relative;
+				top: 40px;
+			}
+			
+			.tab-body-tiem {
+				position: relative;
+				left: 45px;
+			}
+			
+			.info-service-it-1 {
+				position: relative;
+				left: 45px;
+				top: 20px;
+			}
+			
+			.info-service-it-2 {
+				position: relative;
+				top: 80px;
+			}
+			
+			.info-service-it-1 img {
+				float: left;
+			}
+			
+			.info-service-it-2 img {
+				float: left;
+				position: relative;
+				left: -15px;
+			}
+			
+			.info-service-it-1 p {
+				position: relative;
+				top: 10px;
+				margin-left: 85px;
+			}
+			
+			.info-service-it-2 p {
+				position: relative;
+				top: 10px;
+				margin-left: 125px;
+			}
+			
+			.grid {
+				position: relative;
+				margin: 0 auto;
+				height: 105px;
+				width: 1190px;
+				background-color: blueviolet;
+			}
+			
+			.t-logo {
+				position: relative;
+				width: 120px;
+				height: 74px;
+				margin: 0 auto;
+				top: 15px;
+				background-color: yellow;
+			}
+			
+			.t-left {
+				position: relative;
+				top: 4px;
+				width: 105px;
+				height: 38px;
+				float: left;
+				background-color: yellow;
+			}
+			
+			.t-right {
+				position: relative;
+				top: -70px;
+				width: 115px;
+				height: 38px;
+				float: right;
+				background-color: yellow;
+			}
+			
+			#detail-summary {
+				position: relative;
+				left: 1150px;
+				top: 52px;
+				width: 420px;
+				height: 692px;
+				border: 1px solid red;
+			}
+			
+			#detail-summary h1 p a {
+				color: #232321;
+				text-decoration: none;
+				outline: none;
+			}
+			
+			#detail-summary h1 p {
+				font-size: 20px;
+				font-weight: 700;
+			}
+			
+			.summary-name {
+				font-size: 16px;
+				margin-bottom: 42px;
+				font-weight: 400;
+				display: inline-block;
+				min-height: 20px;
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+			.summary-price{
+				color: #c70000;
+				font-family: toplifeCustomEn,Arial;
+			}
+			.summary-price-deco{
+				font-size: 18px;
+			}
+			.summary-row{
+				position: relative;
+				top: 30px;
+				width: 390px;
+				height: 118px;
+				border: 1px solid black;
+			}
+			.area-current{
+				position: relative;
+				left: 70px;
+				/*border: 1px solid gray;*/
+				/*border-bottom: none;*/
+				width: 146px;
+				height: 25px;
+				z-index: 10;
+				/*background-color: white;*/
+			}
+			.area-current p{
+				position: relative;
+				top: -18px;
+				float: left;
+			}
+			.area_dropdown{
+				position: absolute;
+				top: 25px;
+				left: 20px;
+				width: 382px;
+				height: 239px;
+				border: 1px solid gray;
+				background-image: url("images/悬浮.jpg");
+				display: none;
+			}
+			.s1{
+				position: relative;
+				left: -72px;
+				top: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="top">
+			<div class="grid">
+				<div class="t-left">
+
+				</div>
+				<div class="t-logo">
+
+				</div>
+				<div class="t-right">
+
+				</div>
+			</div>
+		</div>
+		<div class="top-nav">
+
+		</div>
+		<div id="detail-intro">
+			<div class="magnifier" id="magnifier1">
+				<div class="magnifier-container">
+					<div class="images-cover"></div>
+					<!--当前图片显示容器-->
+					<div class="move-view"></div>
+					<!--跟随鼠标移动的盒子-->
+				</div>
+				<div class="magnifier-assembly">
+					<div class="magnifier-btn">
+						<span class="magnifier-btn-left">&lt;</span>
+						<span class="magnifier-btn-right">&gt;</span>
+					</div>
+					<!--按钮组-->
+					<div class="magnifier-line">
+						<ul class="clearfix animation03">
+							<li>
+								<div class="small-img">
+									<img src="images/上衣和裤子.jpg" />
+								</div>
+							</li>
+							<li>
+								<div class="small-img">
+									<img src="images/上衣.jpg" />
+								</div>
+							</li>
+							<li>
+								<div class="small-img">
+									<img src="images/黑裤子.jpg" />
+								</div>
+							</li>
+							<li>
+								<div class="small-img">
+									<img src="images/模特.jpg" />
+								</div>
+							</li>
+							<li>
+								<div class="small-img">
+									<img src="images/模特1.jpg" />
+								</div>
+							</li>
+							<li>
+								<div class="small-img">
+									<img src="images/模特2.jpg" />
+								</div>
+							</li>
+							<li>
+								<div class="small-img">
+									<img src="images/模特1.jpg" />
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--缩略图-->
+				</div>
+				<div class="magnifier-view"></div>
+				<!--经过放大的图片显示容器-->
+			</div>
+			<div class="tab-head">
+				<div class="tab-head-item" style="background-color: #232321;">商品描述</div>
+				<div class="tab-head-item">服务说明</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-body-tiem">
+					<img src="images/产品信息.jpg" />
+					<img src="images/尺码对照.jpg" />
+					<img src="images/保养护理.jpg" />
+				</div>
+				<div class="tab-body-tiem-info" style="display: none;">
+					<div class="info-service">
+						<div class="info-service-it-1">
+							<img src="images/小图标1.png" />
+							<p>店铺发货售后</p>
+							<p style="color: gray;">由 TOPLIFE 发货, 并提供售后服务。</p>
+						</div>
+						<div class="info-service-it-2">
+							<img src="images/小图标2.png" />
+							<p>七天退换</p>
+							<p style="color: gray;">支持七天无理由退换</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="detail-summary">
+			<h1>
+				<p><a href="#">CANALI</a></p>
+				<div class="summary-name">
+					男士羊毛威尼斯套装 黑色 意大利尺码
+				</div>
+			</h1>
+			<p class="summary-price">
+				<span class="summary-price-deco">￥</span>
+				<span style="font-size: 36px;">19,800.00</span>
+			</p>
+			<div class="summary-row">
+				<span style="font-size: 14px;color: #999;float: left;">配送至&nbsp;&nbsp;&nbsp;:</span>
+				<div class="area-current">
+					<p>北京平谷区三环以内</p>
+				</div>
+				<div class="area_dropdown"></div>
+				<div class="s1">
+					<span><strong>有货</strong></span>
+					<span>免运费</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="js/magnifier.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+			var magnifierConfig = {
+				magnifier: "#magnifier1", //最外层的大容器
+				width: 610, //承载容器宽
+				height: 610, //承载容器高
+				moveWidth: null, //如果设置了移动盒子的宽度，则不计算缩放比例
+				zoom: 2 //缩放比例
+			};
+
+			var _magnifier = magnifier(magnifierConfig);
+
+			/*magnifier的内置函数调用*/
+			/*
+				//设置magnifier函数的index属性
+				_magnifier.setIndex(1);
+
+				//重新载入主图,根据magnifier函数的index属性
+				_magnifier.eqImg();
+			*/
+			$(".tab-head-item:eq(0)").click(function() {
+				$(this).css("background-color", "#232321");
+				$(".tab-body-tiem").show();
+				$(".tab-body-tiem-info").hide();
+				$(".tab-head-item:eq(1)").css("background-color", "#bcbcbc");
+				$("#detail-intro").removeClass("current");
+				$("#detail-intro").css("height", "1868px");
+			});
+			$(".tab-head-item:eq(1)").click(function() {
+				$(this).css("background-color", "#232321");
+				$(".tab-body-tiem-info").show();
+				$(".tab-body-tiem").hide();
+				$(".tab-head-item:eq(0)").css("background-color", "#bcbcbc");
+				$("#detail-intro").css("height", "1300px");
+			});
+		});
+	</script>
+
+</html>
